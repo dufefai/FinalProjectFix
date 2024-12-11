@@ -105,6 +105,7 @@ const authController = {
       if (user && validPassword) {
         const accessToken = generateAccessToken(user);
         res.cookie("refreshToken", user.token, {
+          maxAge: 365 * 24 * 60 * 60 * 1000,
           httpOnly: true,
           secure: false,
           path: "/",
@@ -123,6 +124,7 @@ const authController = {
       if (user) {
         const accessToken = generateAccessToken(user);
         res.cookie("refreshToken", user.token, {
+          maxAge: 365 * 24 * 60 * 60 * 1000,
           httpOnly: true,
           secure: false,
           path: "/",
@@ -148,6 +150,7 @@ const authController = {
         await User.findByIdAndUpdate(userGoogle._id, { token: refreshToken });
         const accessToken = generateAccessToken(userGoogle);
         res.cookie("refreshToken", refreshToken, {
+          maxAge: 365 * 24 * 60 * 60 * 1000,
           httpOnly: true,
           secure: false,
           path: "/",
