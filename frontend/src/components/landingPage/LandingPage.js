@@ -97,7 +97,7 @@ const LandingPage = () => {
       </div>
       <div className="w-full md:w-[50%] h-full md:mr-[150px]">
         <div className="text-[250%] mt-[100px] flex items-center justify-center">
-          <b>Welcome to My App</b>
+          <b>Welcome to Food Media</b>
         </div>
         <button
           type="button"
